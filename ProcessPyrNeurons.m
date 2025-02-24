@@ -11,75 +11,75 @@ methodKMean = 2;
 
 
 %% accumulation all the relevant data from every recordings for pyramidal neurons
-% PyrPropAllRec(pathS,onlyRun);
+PyrPropAllRec(pathS,onlyRun);
 
 %% accumulate information about individual neurons'
 %% theta modulation, burstness and whether there is a field across recordings
-% PyrModAccumAllRec(pathS, onlyRun, methodKMean);
+PyrModAccumAllRec(pathS, onlyRun, methodKMean);
 
 for taskSel = 3 % 2:3
-    % taskSel == 1 % including all the neurons
-    % taskSel == 2 % including AL and PL neurons
-    % taskSel == 3 % AL neurons only
-%     PyrModAllRec(pathS,onlyRun,taskSel,methodKMean);
-%     
-%     PyrModAlignedAllRec(pathS,onlyRun,taskSel,methodKMean);
-%     
-%     PyrModAllRec_GoodTr(pathS,onlyRun,taskSel,methodKMean);
-% 
-%     PyrModAllRec_CtrlTr(pathS,onlyRun,taskSel,methodKMean);
-%     
-%     PyrModAlignedAllRec_CtrlTr(pathS,onlyRun,taskSel,methodKMean);
-%     
-%     PyrModAlignedAllRec_GoodTr(pathS,onlyRun,taskSel,methodKMean);
-% 
-%     PyrModAlignedDistAllRec_GoodTr(pathS,onlyRun,taskSel,methodKMean);
-%     
-%     PyrInitPeakAllRec(pathS,taskSel,methodKMean); % including non-run time
-% 
-%     PyrInitPeakSpeedAllRec(pathS,taskSel,methodKMean);
-%     
-%     PyrBehAlignedAllRec(pathS,0,taskSel); 
+    %taskSel == 1 % including all the neurons
+    %taskSel == 2 % including AL and PL neurons
+    %taskSel == 3 % AL neurons only
+    PyrModAllRec(pathS,onlyRun,taskSel,methodKMean);
+    
+    PyrModAlignedAllRec(pathS,onlyRun,taskSel,methodKMean);
+    
+    PyrModAllRec_GoodTr(pathS,onlyRun,taskSel,methodKMean);
 
-%     PyrBehTimeAlignedAllRec(pathS,0,taskSel);
+    PyrModAllRec_CtrlTr(pathS,onlyRun,taskSel,methodKMean);
+    
+    PyrModAlignedAllRec_CtrlTr(pathS,onlyRun,taskSel,methodKMean);
+    
+    PyrModAlignedAllRec_GoodTr(pathS,onlyRun,taskSel,methodKMean);
+
+    PyrModAlignedDistAllRec_GoodTr(pathS,onlyRun,taskSel,methodKMean);
+    
+    PyrInitPeakAllRec(pathS,taskSel,methodKMean); % including non-run time
+
+    PyrInitPeakSpeedAllRec(pathS,taskSel,methodKMean);
+    
+    PyrBehAlignedAllRec(pathS,0,taskSel); 
+
+    PyrBehTimeAlignedAllRec(pathS,0,taskSel);
  
 end
 
 %% accumulation all the relevant data from every recordings for interneurons
-% InterneuronPropAllRec(pathS,onlyRun);
+InterneuronPropAllRec(pathS,onlyRun);
 
-% methodKMean = 2;
-% InterneuronModAccumAllRec(pathS,onlyRun,methodKMean);
-% for taskSel = 3
-%     InterneuronInitPeakAllRec(pathS,taskSel,methodKMean);
-%     InterneuronInitPeakSpeedAllRec(pathS,taskSel,methodKMean);
-% end
+methodKMean = 2;
+InterneuronModAccumAllRec(pathS,onlyRun,methodKMean);
+for taskSel = 3
+    InterneuronInitPeakAllRec(pathS,taskSel,methodKMean);
+    InterneuronInitPeakSpeedAllRec(pathS,taskSel,methodKMean);
+end
 
 
 %% find neurons that are significantly changing their FRaft/FRbef
-% PyrInitPeakAllRecSig(pathS); % calculate 
-% InterneuronInitPeakAllRecSig(pathS);
+PyrInitPeakAllRecSig(pathS); % calculate 
+InterneuronInitPeakAllRecSig(pathS);
 
 %% for optogentic stimulation, 
-% PyrInitPeakAllRecSigNoStim2ndStimCtrl(pathS); % find neurons that are significantly changing their FRaft/FRbef,
+PyrInitPeakAllRecSigNoStim2ndStimCtrl(pathS); % find neurons that are significantly changing their FRaft/FRbef,
                 % including good trials from non-stim ctrl and 2nd stim ctrl as ctrl trials, neurons with significant changes in FRaft/FRbef 
-% PyrInitPeakAllStimPVRecSigNonStim2ndStimCtrlTr(pathS,methodKMean);
+PyrInitPeakAllStimPVRecSigNonStim2ndStimCtrlTr(pathS,methodKMean);
                 % including good trials from non-stim ctrl and 2nd stim ctrl as ctrl trials, only consider stimulation recordings
                 % stim ctrl trials are the second stim ctrl
                 % trials from all the stim pulse types from the recording
 
 %% PV stimulation session, pyrRise and pyrDown neurons
-% PyrIntInitPeakPVStimNonStim2ndStimCtrlNoDriftSelRec(pathS,methodKMean,pDriftRec); 
-%                 % Separating into rise and down neurons, select neurons to
-%                 % remove the recordings with drifted firing rate between ctrl
-%                 % and stimCtrl. Excluding some recordings that have clear drifts during the PV activation experiments 
-% PyrIntInitPeakPVStimNonStim2ndStimCtrlNoDriftSelRec_ttest(pathS)
-                    % perform ttest  to compare the firing rate change between
-%                   % control and stim trials
-% PyrIntInitPeakCorrTPVSigNonStim2ndStimCtrlNoDriftSelRec(pathS,methodKMean,pDriftRec);
-%                 % correlation of neurons, 
-%                 % remove the recordings with drifted firing rate between ctrl
-%                 % and stimCtrl. Excluding some recordings that have clear drifts during the PV activation experiments 
+PyrIntInitPeakPVStimNonStim2ndStimCtrlNoDriftSelRec(pathS,methodKMean,pDriftRec); 
+                % Separating into rise and down neurons, select neurons to
+                % remove the recordings with drifted firing rate between ctrl
+                % and stimCtrl. Excluding some recordings that have clear drifts during the PV activation experiments 
+PyrIntInitPeakPVStimNonStim2ndStimCtrlNoDriftSelRec_ttest(pathS)
+                    perform ttest  to compare the firing rate change between
+                  % control and stim trials
+PyrIntInitPeakCorrTPVSigNonStim2ndStimCtrlNoDriftSelRec(pathS,methodKMean,pDriftRec);
+                % correlation of neurons, 
+                % remove the recordings with drifted firing rate between ctrl
+                % and stimCtrl. Excluding some recordings that have clear drifts during the PV activation experiments 
 
 
 %% compare behavior in no cue and AL task (Figure 1)
@@ -102,9 +102,9 @@ end
 
 %% classify PyrUp and PyrDown neurons based on the FR change before and after the run onset
 for taskSel = 3
-%     for pshuffle = 3
-%         PyrIntInitPeakSig(pathS,taskSel,pshuffle); % select the ones that has a significant change in FR around run onset 
-%     end
+    for pshuffle = 3
+        PyrIntInitPeakSig(pathS,taskSel,pshuffle); % select the ones that has a significant change in FR around run onset 
+    end
           %      (pshuffle = 1 -> 99.9%, 2 -> 99%, 3 -> 95%)
     PyrIntInitPeak(pathS,taskSel);
 end
@@ -123,13 +123,13 @@ PyrIntInitPeak_PLoc(pathS); % estimate the peak location and tau of the average 
 % taskSel = 4;
 % PyrIntInitPeakNoCue(pathS,taskSel); % only look at the run onset response for PL recordings
 
-taskSel = 5;
+% taskSel = 5;
 % PyrIntInitPeakALFirst10Rec(pathS,taskSel); % only look at the run onset response for the first 10 AL recordings
 
-for ALMode = 1:3
-    % compare No Cue and AL ramping at the run onset
+% for ALMode = 1:3
+%     % compare No Cue and AL ramping at the run onset
 %     CompPyrIntInitPeakNoCueVsAL(pathS,ALMode); % ALMode = 1, for all the AL and PL recordings; ALMode = 2, for all the AL recordings; ALMode = 3, for the first 10 AL recordings
-end
+% end
 
 %% muscimol data
 % ProcessAllRecBehMusc();
