@@ -543,6 +543,8 @@ function PyrIntInitPeak_PLoc(pathS)
         'Time from runonset(s)','Norm FR',pathAnal1,'PyrDown_cmpAvgFRProfilesNorm_DiffFR0to1vsBefRunRatio');
 
     save([pathAnal1 'avgFRProfile_PeakAndTau.mat'],'PyrRisePeak_AftRun','-append');
+    
+    close all;
 end
 
 

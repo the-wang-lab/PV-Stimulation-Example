@@ -10,13 +10,16 @@ function plotIndFRProfile(timeStepRun,avgFRProfile,yl,fileName,pathAnal,ylimit,o
     if(ordMethod == 1)
         [~,indMax] = max(avgFRProfile');
     elseif(ordMethod == 2)
-        indMax = mean(avgFRProfile(:,indT)');
+        indMax = max(avgFRProfile(:,indT)');
     elseif(ordMethod == 3)
         indMax = mean(avgFRProfile(:,indT)');
     elseif(ordMethod == 4)
         indMax1 = mean(avgFRProfile(:,indT1)');
         indMax2 = mean(avgFRProfile(:,indT)');
         indMax = indMax1./indMax2;
+    elseif(ordMethod == 5)
+        indTmp = timeStepRun > 0;
+        [~,indMax] = max(avgFRProfile(:,indTmp)');
     end
     if(ordMethod == 4)
         [~,indOrd] = sort(indMax,'descend');

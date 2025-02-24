@@ -10,7 +10,7 @@ function plotIndFRProfileCmp(timeStepRun,avgFRProfile,avgFRProfile1,yl,fileName,
     if(ordMethod == 1)
         [~,indMax] = max(avgFRProfile');
     elseif(ordMethod == 2)
-        indMax = mean(avgFRProfile(:,indT)');
+        indMax = max(avgFRProfile(:,indT)');
     elseif(ordMethod == 3)
         indMax = mean(avgFRProfile(:,indT)');
     elseif(ordMethod == 4)

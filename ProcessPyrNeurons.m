@@ -74,7 +74,7 @@ PyrIntInitPeakPVStimNonStim2ndStimCtrlNoDriftSelRec(pathS,methodKMean,pDriftRec)
                 % remove the recordings with drifted firing rate between ctrl
                 % and stimCtrl. Excluding some recordings that have clear drifts during the PV activation experiments 
 PyrIntInitPeakPVStimNonStim2ndStimCtrlNoDriftSelRec_ttest(pathS)
-                    perform ttest  to compare the firing rate change between
+                  % perform ttest  to compare the firing rate change between
                   % control and stim trials
 PyrIntInitPeakCorrTPVSigNonStim2ndStimCtrlNoDriftSelRec(pathS,methodKMean,pDriftRec);
                 % correlation of neurons, 
